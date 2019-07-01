@@ -1,12 +1,10 @@
 //
-//  Future.h
-//  Future
+// MIT License
 //
-//  Created by zhiy on 2019/7/2.
-//  Copyright © 2019 zhiy. All rights reserved.
+// Copyright (c) 2019 zhiycn
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
 //! Project version number for Future.
 FOUNDATION_EXPORT double FutureVersionNumber;

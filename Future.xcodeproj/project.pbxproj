@@ -10,6 +10,7 @@
 		D5787DE122CA6CAF00AFFAE0 /* Future.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5787DD722CA6CAF00AFFAE0 /* Future.framework */; };
 		D5787DE622CA6CAF00AFFAE0 /* FutureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5787DE522CA6CAF00AFFAE0 /* FutureTests.swift */; };
 		D5787DE822CA6CAF00AFFAE0 /* Future.h in Headers */ = {isa = PBXBuildFile; fileRef = D5787DDA22CA6CAF00AFFAE0 /* Future.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5787DF222CA6CD800AFFAE0 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5787DF122CA6CD800AFFAE0 /* Future.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		D5787DE022CA6CAF00AFFAE0 /* FutureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FutureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5787DE522CA6CAF00AFFAE0 /* FutureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureTests.swift; sourceTree = "<group>"; };
 		D5787DE722CA6CAF00AFFAE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5787DF122CA6CD800AFFAE0 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +55,8 @@
 		D5787DCD22CA6CAF00AFFAE0 = {
 			isa = PBXGroup;
 			children = (
-				D5787DD922CA6CAF00AFFAE0 /* Future */,
-				D5787DE422CA6CAF00AFFAE0 /* FutureTests */,
+				D5787DD922CA6CAF00AFFAE0 /* Source */,
+				D5787DE422CA6CAF00AFFAE0 /* Tests */,
 				D5787DD822CA6CAF00AFFAE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,22 +70,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D5787DD922CA6CAF00AFFAE0 /* Future */ = {
+		D5787DD922CA6CAF00AFFAE0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				D5787DDA22CA6CAF00AFFAE0 /* Future.h */,
+				D5787DF122CA6CD800AFFAE0 /* Future.swift */,
 				D5787DDB22CA6CAF00AFFAE0 /* Info.plist */,
 			);
-			path = Future;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		D5787DE422CA6CAF00AFFAE0 /* FutureTests */ = {
+		D5787DE422CA6CAF00AFFAE0 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				D5787DE522CA6CAF00AFFAE0 /* FutureTests.swift */,
 				D5787DE722CA6CAF00AFFAE0 /* Info.plist */,
 			);
-			path = FutureTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					D5787DD622CA6CAF00AFFAE0 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					D5787DDF22CA6CAF00AFFAE0 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5787DF222CA6CD800AFFAE0 /* Future.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,13 +346,14 @@
 		D5787DEC22CA6CAF00AFFAE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Future/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -357,6 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail-zhengzycn.Future";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,13 +372,14 @@
 		D5787DED22CA6CAF00AFFAE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Future/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -389,6 +397,7 @@
 		D5787DEF22CA6CAF00AFFAE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FutureTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -406,6 +415,7 @@
 		D5787DF022CA6CAF00AFFAE0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FutureTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
