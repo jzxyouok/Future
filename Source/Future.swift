@@ -288,7 +288,7 @@ extension Future {
 
     @inlinable
     @discardableResult
-    public func onSucceed(_ body: @escaping (T) -> Void) -> Future {
+    public func `do`(_ body: @escaping (T) -> Void) -> Future {
         addCallback { result in
             if case .success(let t) = result { body(t) }
         }
@@ -297,7 +297,7 @@ extension Future {
 
     @inlinable
     @discardableResult
-    public func onFail(_ body: @escaping (Error) -> Void) -> Future {
+    public func `catch`(_ body: @escaping (Error) -> Void) -> Future {
         addCallback { result in
             if case .failure(let e) = result { body(e) }
         }
@@ -306,14 +306,14 @@ extension Future {
 
     @inlinable
     @discardableResult
-    public func onResult(_ body: @escaping (Result<T, Error>) -> Void) -> Future {
+    public func result(_ body: @escaping (Result<T, Error>) -> Void) -> Future {
         addCallback { body($0) }
         return self
     }
 
     @inlinable
     @discardableResult
-    public func onComplete(_ body: @escaping () -> Void) -> Future {
+    public func then(_ body: @escaping () -> Void) -> Future {
         addCallback { _ in body() }
         return self
     }

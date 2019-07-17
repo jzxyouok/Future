@@ -71,7 +71,7 @@ func getFutureB() -> Future<B> {
 再函数式地调用：
 
 ```swift
-getFutureA().append(getFutureB()).map(AB.init).onSucceed(self.do).onFail { error in
+getFutureA().append(getFutureB()).map(AB.init).do(self.do).catch { error in
     // 处理错误
 }
 ```
