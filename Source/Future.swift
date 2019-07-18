@@ -48,11 +48,9 @@ public final class Future<T> {
     @inlinable
     func setResult(_ result: Result<T, Error>) {
         semaphore?.wait()
-        defer {
-            semaphore?.signal()
-            semaphore = nil
-        }
+        defer { semaphore?.signal() }
         guard self.result == nil else { return }
+        defer { semaphore = nil }
         callbacks.forEach { $0(result) }
         callbacks = []
         self.result = result
@@ -301,13 +299,6 @@ extension Future {
         addCallback { result in
             if case .failure(let e) = result { body(e) }
         }
-        return self
-    }
-
-    @inlinable
-    @discardableResult
-    public func result(_ body: @escaping (Result<T, Error>) -> Void) -> Future {
-        addCallback { body($0) }
         return self
     }
 
